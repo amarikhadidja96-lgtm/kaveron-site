@@ -237,7 +237,7 @@ export function App() {
         href="#main-content"
         className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2.5 focus:bg-[#00FF88] focus:text-[#0A0A0A] focus:font-bold focus:rounded-xl focus:shadow-[0_0_20px_rgba(0,255,136,0.5)] focus:outline-none"
       >
-        {lang === 'ar' ? 'الانتقال إلى المحتوى الرئيسي' : 'Skip to content'}
+        {currentTranslations.common?.skipToContent || (lang === 'ar' ? 'تخطّ إلى المحتوى' : 'Skip to content')}
       </a>
 
       {/* Sticky Blurred Navbar */}
@@ -306,7 +306,7 @@ export function App() {
       <Footer t={currentTranslations} onNavigate={navigateTo} />
 
       {/* Floating Action Elements */}
-      <FloatingWhatsApp currentLang={lang} />
+      <FloatingWhatsApp t={currentTranslations} currentLang={lang} />
       <Suspense fallback={null}>
         <ChatWidget t={currentTranslations} currentLang={lang} />
       </Suspense>

@@ -68,7 +68,7 @@ const EntryModal = ({ entry: initialEntry, onSave, onClose }) => {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm">
-      <div className="bg-[#111111] border border-white/10 rounded-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto shadow-2xl">
+      <div className="bg-[#111111] border border-white/10 rounded-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto shadow-2xl" dir="ltr">
         {/* Header */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-white/10 sticky top-0 bg-[#111111] z-10">
           <h2 className="text-white font-semibold text-base">
@@ -461,7 +461,8 @@ export const AdminKnowledge = ({ t, currentLang, onToggleLang, onBackToSite, onN
                             type="button"
                             onClick={() => setModal({ entry })}
                             className="p-1.5 rounded-lg text-[#A1A1AA] hover:text-[#00FF88] hover:bg-[#00FF88]/10 transition-colors cursor-pointer"
-                            title="Edit"
+                            title={isRtl ? 'تعديل' : 'Edit'}
+                            aria-label={isRtl ? 'تعديل' : 'Edit'}
                           >
                             <Edit3 className="w-4 h-4" />
                           </button>
@@ -469,7 +470,8 @@ export const AdminKnowledge = ({ t, currentLang, onToggleLang, onBackToSite, onN
                             type="button"
                             onClick={() => setConfirmDelete(entry.id)}
                             className="p-1.5 rounded-lg text-[#A1A1AA] hover:text-red-400 hover:bg-red-400/10 transition-colors cursor-pointer"
-                            title="Delete"
+                            title={isRtl ? 'حذف' : 'Delete'}
+                            aria-label={isRtl ? 'حذف' : 'Delete'}
                           >
                             <Trash2 className="w-4 h-4" />
                           </button>
@@ -549,7 +551,8 @@ export const AdminKnowledge = ({ t, currentLang, onToggleLang, onBackToSite, onN
                     type="button"
                     onClick={() => handleDeleteUnanswered(item.id)}
                     className="p-2 rounded-lg text-[#A1A1AA] hover:text-red-400 hover:bg-red-400/10 transition-colors cursor-pointer"
-                    title="Delete"
+                    title={isRtl ? 'حذف' : 'Delete'}
+                    aria-label={isRtl ? 'حذف' : 'Delete'}
                   >
                     <Trash2 className="w-4 h-4" />
                   </button>

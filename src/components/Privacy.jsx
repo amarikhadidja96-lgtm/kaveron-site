@@ -65,7 +65,7 @@ export const Privacy = ({ t, currentLang, onBackToHome }) => {
 
         {/* Bottom CTA */}
         <div className="mt-12 pt-8 border-t border-white/[0.08] flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-[#71717A]">
+          <p dir="ltr" className="text-xs text-[#71717A]">
             Kaveron Agency • hello@kaveron.com
           </p>
           <Button

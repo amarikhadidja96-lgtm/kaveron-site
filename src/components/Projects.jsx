@@ -210,7 +210,7 @@ export const Projects = ({ t, currentLang, onNavigate, isStandalonePage = false 
             {/* Card Content */}
             <div className="flex flex-col items-center max-w-sm mb-6">
               <span className="font-mono text-xs text-[#00FF88] tracking-widest uppercase mb-2">
-                // NEXT COLLABORATION
+                {sectionT.nextCollabBadge || '// NEXT COLLABORATION'}
               </span>
               <h3
                 className={`font-heading font-extrabold text-white mb-4 tracking-tight ${isCompactCount ? 'text-2xl sm:text-3xl' : 'text-xl sm:text-2xl'

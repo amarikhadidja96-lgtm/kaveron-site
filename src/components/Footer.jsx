@@ -58,7 +58,7 @@ export const Footer = ({ t, onNavigate }) => {
               href="/"
               onClick={(e) => handleLink(e, '/')}
               className="group flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00FF88] rounded-lg p-1 mb-4"
-              aria-label="kaveron home"
+              aria-label={t.footer.homeAria || 'kaveron home'}
             >
               <span className="text-2xl font-heading font-extrabold tracking-tight text-white">
                 <span className="text-[#00FF88] font-mono">&lt;</span>
@@ -146,9 +146,9 @@ export const Footer = ({ t, onNavigate }) => {
                 type="button"
                 onClick={scrollToTop}
                 className="inline-flex items-center gap-2 text-xs font-mono text-[#A1A1AA] hover:text-[#00FF88] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00FF88] rounded-lg p-1"
-                aria-label="Scroll back to top"
+                aria-label={t.footer.scrollToTop || 'Scroll back to top'}
               >
-                <span>Back to top</span>
+                <span>{t.footer.backToTop || 'Back to top'}</span>
                 <ArrowUp className="w-3.5 h-3.5" />
               </button>
             </div>
@@ -169,7 +169,7 @@ export const Footer = ({ t, onNavigate }) => {
           </div>
           <div className="flex items-center gap-4 text-xs font-mono">
             <span className="inline-block w-2 h-2 rounded-full bg-[#00FF88] animate-pulse" />
-            <span className="text-[#A1A1AA]">All systems operational</span>
+            <span className="text-[#A1A1AA]">{t.footer.systemsOperational || 'All systems operational'}</span>
           </div>
         </div>
       </div>

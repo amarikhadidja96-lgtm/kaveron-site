@@ -272,7 +272,7 @@ export const ChatWidget = ({ t, currentLang }) => {
       {showWelcomeBubble && !isOpen && (
         <div
           role="status"
-          className="fixed bottom-24 right-6 rtl:left-6 rtl:right-auto z-40 animate-fade-in select-none"
+          className="fixed bottom-24 end-6 z-40 animate-fade-in select-none"
         >
           <div
             onClick={() => setIsOpen(true)}
@@ -289,7 +289,7 @@ export const ChatWidget = ({ t, currentLang }) => {
                 setShowWelcomeBubble(false);
               }}
               className="text-[#71717A] hover:text-white ms-1 p-0.5"
-              aria-label="Dismiss bubble"
+              aria-label={chatT.dismissBubbleAria || 'Dismiss notification'}
             >
               <X className="w-3.5 h-3.5" />
             </button>
@@ -300,15 +300,15 @@ export const ChatWidget = ({ t, currentLang }) => {
       {/* 2. Floating Action Button: bottom-right in LTR, bottom-left in RTL */}
       {!isOpen && (
         <aside
-          aria-label="AI Chat Widget"
-          className="fixed bottom-6 right-6 rtl:left-6 rtl:right-auto z-40 select-none"
+          aria-label={chatT.widgetAria || 'AI Chat Widget'}
+          className="fixed bottom-6 end-6 z-40 select-none"
         >
           <button
             type="button"
             onClick={toggleChat}
             className="group relative flex items-center justify-center w-14 h-14 rounded-full bg-[#111111] border border-[#00FF88]/50 text-[#00FF88] shadow-[0_0_25px_rgba(0,255,136,0.35)] hover:shadow-[0_0_35px_rgba(0,255,136,0.6)] hover:scale-110 active:scale-95 transition-all duration-300 backdrop-blur-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00FF88]"
-            aria-label="Open AI Chatbot"
-            title="Chat with kaveron AI"
+            aria-label={chatT.openAria || 'Open AI Chatbot'}
+            title={chatT.openTitle || 'Chat with kaveron AI'}
           >
             {/* Pulsing ring */}
             <span className="absolute -inset-1 rounded-full bg-[#00FF88]/20 animate-pulse pointer-events-none" />
@@ -327,8 +327,8 @@ export const ChatWidget = ({ t, currentLang }) => {
           ref={chatDialogRef}
           role="dialog"
           aria-modal="true"
-          aria-label="AI Assistant Chat"
-          className="fixed bottom-6 right-6 rtl:left-6 rtl:right-auto z-50 w-full sm:w-[380px] h-[100dvh] sm:h-[560px] max-h-[100dvh] sm:max-h-[85vh] sm:rounded-[24px] bg-[#111111]/95 border border-[#00FF88]/40 shadow-[0_0_45px_rgba(0,255,136,0.22)] backdrop-blur-2xl flex flex-col overflow-hidden animate-fade-in"
+          aria-label={chatT.dialogAria || 'AI Assistant Chat'}
+          className="fixed bottom-6 end-6 z-50 w-full sm:w-[380px] h-[100dvh] sm:h-[560px] max-h-[100dvh] sm:max-h-[85vh] sm:rounded-[24px] bg-[#111111]/95 border border-[#00FF88]/40 shadow-[0_0_45px_rgba(0,255,136,0.22)] backdrop-blur-2xl flex flex-col overflow-hidden animate-fade-in"
         >
           {/* Top Neon Accent Line */}
           <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#00FF88] to-transparent shadow-[0_0_12px_rgba(0,255,136,0.6)] z-20" />

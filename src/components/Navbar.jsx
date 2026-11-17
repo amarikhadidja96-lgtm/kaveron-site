@@ -121,7 +121,7 @@ export const Navbar = ({ t, currentLang, onToggleLang, currentRoute = '/', onNav
     >
       {/* Scroll progress bar */}
       <motion.div
-        className="absolute top-0 left-0 h-[2px] bg-[#00FF88] shadow-[0_0_8px_rgba(0,255,136,0.7)] origin-left"
+        className="absolute top-0 start-0 h-[2px] bg-[#00FF88] shadow-[0_0_8px_rgba(0,255,136,0.7)] origin-[start]"
         style={{ width: progressWidth, scaleX: 1 }}
         aria-hidden
       />
@@ -130,6 +130,7 @@ export const Navbar = ({ t, currentLang, onToggleLang, currentRoute = '/', onNav
           {/* Logo */}
           <a
             href="/"
+            dir="ltr"
             onClick={(e) => {
               if (currentRoute !== '/') {
                 e.preventDefault();
@@ -137,7 +138,7 @@ export const Navbar = ({ t, currentLang, onToggleLang, currentRoute = '/', onNav
               }
             }}
             className="group flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00FF88] rounded-lg p-1"
-            aria-label="kaveron home"
+            aria-label={t.nav.homeAria || 'kaveron home'}
           >
             <span className="text-xl sm:text-2xl font-heading font-extrabold tracking-tight text-white transition-colors duration-200 group-hover:text-white">
               <span className="text-[#00FF88] font-mono group-hover:drop-shadow-[0_0_8px_rgba(0,255,136,0.6)]">
@@ -151,7 +152,7 @@ export const Navbar = ({ t, currentLang, onToggleLang, currentRoute = '/', onNav
           </a>
 
           {/* Desktop Navigation Links — visible only at lg+ */}
-          <nav className="hidden lg:flex items-center gap-1 lg:gap-2 bg-[#111111]/70 border border-white/[0.06] backdrop-blur-md px-3 py-1.5 rounded-full" aria-label="Main navigation">
+          <nav className="hidden lg:flex items-center gap-1 lg:gap-2 bg-[#111111]/70 border border-white/[0.06] backdrop-blur-md px-3 py-1.5 rounded-full" aria-label={t.nav.mainNavAria || 'Main navigation'}>
             {t.nav.links.map((link) => {
               const isContactLink = link.href === '/contact' || link.href === '#contact';
               const isContactActive = isContactLink && isContactPage;
@@ -184,8 +185,8 @@ export const Navbar = ({ t, currentLang, onToggleLang, currentRoute = '/', onNav
               type="button"
               onClick={onToggleLang}
               className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono font-medium rounded-lg text-[#A1A1AA] hover:text-white bg-[#111111] border border-white/[0.08] hover:border-[#00FF88]/40 hover:shadow-[0_0_10px_rgba(0,255,136,0.2)] transition-all duration-200"
-              aria-label={`Switch language to ${t.nav.languageLabel}`}
-              title={`Switch language to ${t.nav.languageLabel}`}
+              aria-label={`${t.nav.switchLanguagePrefix || 'Switch language to '}${t.nav.languageLabel}`}
+              title={`${t.nav.switchLanguagePrefix || 'Switch language to '}${t.nav.languageLabel}`}
             >
               <Globe className="w-3.5 h-3.5 text-[#00FF88]" />
               <span className="tracking-wider">{t.nav.languageSwitch}</span>
@@ -209,7 +210,7 @@ export const Navbar = ({ t, currentLang, onToggleLang, currentRoute = '/', onNav
               type="button"
               onClick={onToggleLang}
               className="inline-flex items-center gap-1 px-2.5 py-1.5 text-xs font-mono font-medium rounded-lg text-[#A1A1AA] hover:text-white bg-[#111111] border border-white/[0.08]"
-              aria-label={`Switch language to ${t.nav.languageLabel}`}
+              aria-label={`${t.nav.switchLanguagePrefix || 'Switch language to '}${t.nav.languageLabel}`}
             >
               <Globe className="w-3.5 h-3.5 text-[#00FF88]" />
               <span>{t.nav.languageSwitch}</span>
@@ -270,7 +271,7 @@ export const Navbar = ({ t, currentLang, onToggleLang, currentRoute = '/', onNav
 
         <div className="flex flex-col gap-3 pb-8 border-t border-white/[0.08] pt-6">
           <div className="flex items-center justify-between px-2 text-sm text-[#A1A1AA]">
-            <span>Language / اللغة:</span>
+            <span>{t.nav.languageMenuLabel || 'Language'}:</span>
             <button
               type="button"
               onClick={() => {

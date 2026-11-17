@@ -48,7 +48,7 @@ const TimelineStep = ({ step, index, isLast }) => {
       } ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'}`}
     >
       {/* Mobile & Desktop Center Node with Glowing Number */}
-      <div className="absolute left-6 md:left-1/2 -translate-x-1/2 z-20 flex flex-col items-center">
+      <div className="absolute start-6 rtl:end-auto md:start-1/2 -translate-x-1/2 rtl:translate-x-1/2 md:rtl:translate-x-1/2 z-20 flex flex-col items-center">
         <div
           className={`w-12 h-12 rounded-2xl flex items-center justify-center font-mono text-sm font-bold transition-all duration-500 border ${
             isVisible
@@ -125,7 +125,7 @@ export const Process = ({ t }) => {
         <div className="relative max-w-4xl mx-auto">
           {/* Continuous Glowing Neon Green Connecting Line */}
           <div
-            className="absolute left-6 md:left-1/2 -translate-x-1/2 top-6 bottom-6 w-[2px] bg-gradient-to-b from-transparent via-[#00FF88]/50 to-transparent shadow-[0_0_12px_rgba(0,255,136,0.4)] pointer-events-none"
+            className="absolute start-6 rtl:end-auto md:start-1/2 -translate-x-1/2 rtl:translate-x-1/2 md:rtl:translate-x-1/2 top-6 bottom-6 w-[2px] bg-gradient-to-b from-transparent via-[#00FF88]/50 to-transparent shadow-[0_0_12px_rgba(0,255,136,0.4)] pointer-events-none"
             aria-hidden="true"
           />
 

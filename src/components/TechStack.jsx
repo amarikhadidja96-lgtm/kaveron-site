@@ -74,7 +74,7 @@ const technologies = [
 
 export const TechStack = ({ t }) => {
   // Duplicate array 2x for seamless marquee looping
-  const marqueeItems = [...technologies, ...technologies, ...technologies];
+  const marqueeItems = [...technologies, ...technologies];
 
   return (
     <section className="relative py-20 bg-[#0A0A0A] overflow-hidden border-t border-b border-white/[0.04]">

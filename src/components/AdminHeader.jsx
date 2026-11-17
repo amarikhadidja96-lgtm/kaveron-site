@@ -37,7 +37,7 @@ export const AdminHeader = ({
 
         {/* Brand */}
         <div className="flex items-center gap-2">
-          <span className="text-base sm:text-lg font-heading font-extrabold text-white">
+          <span dir="ltr" className="text-base sm:text-lg font-heading font-extrabold text-white">
             <span className="text-[#00FF88] font-mono">&lt;</span>kaveron
             <span className="text-[#00FF88] font-mono">&#47;&gt;</span>
           </span>
@@ -124,7 +124,8 @@ export const AdminHeader = ({
           type="button"
           onClick={onToggleLang}
           className="font-mono text-xs px-2.5 py-1.5 rounded-lg bg-[#111111] border border-white/10 text-[#A1A1AA] hover:text-white hover:border-[#00FF88]/40 transition-colors"
-          title="Toggle Language"
+          title={isRtl ? 'تغيير اللغة' : 'Toggle Language'}
+          aria-label={isRtl ? 'تغيير اللغة' : 'Toggle Language'}
         >
           {currentLang === 'en' ? 'العربية' : 'EN'}
         </button>

@@ -184,7 +184,7 @@ export const Hero = ({ t, onNavigate }) => {
                 key={idx}
                 className="flex flex-col items-center p-3 rounded-2xl bg-[#111111]/40 border border-white/[0.04] backdrop-blur-sm"
               >
-                <div className="text-xl sm:text-3xl lg:text-4xl font-heading font-extrabold text-white flex items-center justify-center gap-0.5 mb-1 leading-tight">
+                <div dir="ltr" className="text-xl sm:text-3xl lg:text-4xl font-heading font-extrabold text-white flex items-center justify-center gap-0.5 mb-1 leading-tight">
                   {stat.isNumber ? (
                     <>
                       <AnimatedCounter endValue={stat.value} />

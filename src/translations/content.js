@@ -1,5 +1,10 @@
 export const translations = {
   en: {
+    common: {
+      skipToContent: 'Skip to content',
+      backToTop: 'Back to top',
+      scrollToTop: 'Scroll to top',
+    },
     meta: {
       brandName: 'kaveron',
       brandSuffix: '.',
@@ -17,8 +22,12 @@ export const translations = {
       cta: 'Start a Project',
       languageSwitch: 'AR',
       languageLabel: 'العربية',
+      switchLanguagePrefix: 'Switch language to ',
       menuToggleOpen: 'Open menu',
       menuToggleClose: 'Close menu',
+      mainNavAria: 'Main navigation',
+      homeAria: 'kaveron home',
+      languageMenuLabel: 'Language',
     },
     hero: {
       badge: '// Available for new projects',
@@ -94,6 +103,7 @@ export const translations = {
       nextCardTitle: 'Your project could be next',
       nextCardSubtitle: 'Have a vision for your brand, startup, or product? Let’s partner to build an extraordinary digital experience.',
       nextCardCta: 'Start a Project',
+      nextCollabBadge: '// NEXT COLLABORATION',
       modal: {
         clientLabel: 'Client',
         yearLabel: 'Year',
@@ -107,6 +117,9 @@ export const translations = {
         closeAria: 'Close modal',
         prevAria: 'Previous project',
         nextAria: 'Next project',
+        prevImageAria: 'Previous image',
+        nextImageAria: 'Next image',
+        thumbnailAlt: 'Thumbnail',
         imageOf: 'Image',
         of: 'of',
       },
@@ -170,6 +183,8 @@ export const translations = {
       subtitle: 'Trusted by founders, product leaders, and ambitious companies around the world.',
       prevLabel: 'Previous testimonial',
       nextLabel: 'Next testimonial',
+      ratingAria: '5 out of 5 stars',
+      goToSlideAria: 'Go to slide',
     },
     faq: {
       badge: '// COMMON QUESTIONS',
@@ -217,6 +232,7 @@ export const translations = {
     },
     contactSection: {
       badge: '// START A CONVERSATION',
+      getConnectedBadge: '// GET CONNECTED',
       backToHome: 'Back to Home',
       breadcrumbHome: 'Home',
       breadcrumbProjects: 'Projects',
@@ -271,6 +287,7 @@ export const translations = {
         emailInvalid: 'Please enter a valid email address.',
         messageRequired: 'Please describe your project.',
         rateLimit: 'Please wait a few seconds before submitting again.',
+        unexpectedError: 'An unexpected error occurred. Please try again.',
       },
       success: {
         title: "Thanks! We'll get back to you within 24 hours",
@@ -353,6 +370,11 @@ export const translations = {
       minimizeAria: 'Minimize chat',
       closeAria: 'Close chat',
       newChat: 'New chat',
+      dismissBubbleAria: 'Dismiss notification',
+      widgetAria: 'AI Chat Widget',
+      openAria: 'Open AI Chatbot',
+      openTitle: 'Chat with kaveron AI',
+      dialogAria: 'AI Assistant Chat',
       chips: [
         'Our services',
         'Pricing',
@@ -410,6 +432,12 @@ export const translations = {
       backHome: '← Back to Homepage',
       contactUs: 'Contact Support',
     },
+    whatsapp: {
+      supportLabel: 'WhatsApp Direct Support',
+      chatAria: 'Chat on WhatsApp',
+      chatTitle: 'Chat with Kaveron on WhatsApp',
+      tooltip: 'WhatsApp Direct',
+    },
     footer: {
       description: 'A modern digital studio engineering next-generation websites, online stores, and scalable web platforms for visionary brands.',
       quickLinksTitle: 'Quick Links',
@@ -419,6 +447,10 @@ export const translations = {
       rights: 'All rights reserved.',
       adminLink: 'Admin Portal',
       privacyLink: 'Privacy Policy',
+      backToTop: 'Back to top',
+      scrollToTop: 'Scroll to top',
+      systemsOperational: 'All systems operational',
+      homeAria: 'kaveron home',
       socials: [
         { name: 'LinkedIn', href: 'https://linkedin.com', icon: 'Linkedin' },
         { name: 'Instagram', href: 'https://instagram.com', icon: 'Instagram' },
@@ -428,6 +460,11 @@ export const translations = {
     },
   },
   ar: {
+    common: {
+      skipToContent: 'تخطّ إلى المحتوى',
+      backToTop: 'العودة للأعلى',
+      scrollToTop: 'العودة للأعلى',
+    },
     meta: {
       brandName: 'كافيرون',
       brandSuffix: '.',
@@ -445,8 +482,12 @@ export const translations = {
       cta: 'ابدأ مشروعك',
       languageSwitch: 'EN',
       languageLabel: 'English',
+      switchLanguagePrefix: 'تغيير اللغة إلى ',
       menuToggleOpen: 'فتح القائمة',
       menuToggleClose: 'إغلاق القائمة',
+      mainNavAria: 'التنقل الرئيسي',
+      homeAria: 'الرئيسية - كافيرون',
+      languageMenuLabel: 'اللغة',
     },
     hero: {
       badge: '// متاحون للمشاريع الجديدة',
@@ -513,7 +554,7 @@ export const translations = {
       badge: '// أعمالنا المختارة',
       title: 'مشاريع مختارة',
       subtitle: 'نخبة من إبداعاتنا الرقمية المصممة لتقديم تجارب استثنائية وتحقيق نتائج ملموسة لنمو الأعمال.',
-      backToHome: 'العودة إلى الرئيسية →',
+      backToHome: 'العودة إلى الرئيسية ←',
       allFilter: 'كافة المشاريع',
       conceptBadge: 'نموذج تجريبي',
       viewCaseStudy: 'عرض دراسة الحالة',
@@ -522,6 +563,7 @@ export const translations = {
       nextCardTitle: 'مشروعك القادم قد يكون هنا',
       nextCardSubtitle: 'جاهز لتحويل فكرتك إلى تجربة رقمية استثنائية؟ دعنا نتعاون لبناء منتج رقمي متكامل يليق بطموحك.',
       nextCardCta: 'ابدأ مشروعك',
+      nextCollabBadge: '// التعاون القادم',
       modal: {
         clientLabel: 'العميل',
         yearLabel: 'السنة',
@@ -535,6 +577,9 @@ export const translations = {
         closeAria: 'إغلاق نافذة التفاصيل',
         prevAria: 'المشروع السابق',
         nextAria: 'المشروع التالي',
+        prevImageAria: 'الصورة السابقة',
+        nextImageAria: 'الصورة التالية',
+        thumbnailAlt: 'صورة مصغرة',
         imageOf: 'صورة',
         of: 'من',
       },
@@ -598,6 +643,8 @@ export const translations = {
       subtitle: 'نفتخر بثقة المؤسسين وقادة الأعمال الذين اختاروا كافيرون لتنفيذ مشاريعهم الرقمية.',
       prevLabel: 'الرأي السابق',
       nextLabel: 'الرأي التالي',
+      ratingAria: '5 من 5 نجوم',
+      goToSlideAria: 'الانتقال إلى الشريحة',
     },
     faq: {
       badge: '// الأسئلة الشائعة',
@@ -645,6 +692,7 @@ export const translations = {
     },
     contactSection: {
       badge: '// ابدأ المحادثة',
+      getConnectedBadge: '// تواصل معنا',
       backToHome: 'العودة للرئيسية',
       breadcrumbHome: 'الرئيسية',
       breadcrumbProjects: 'المشاريع',
@@ -699,6 +747,7 @@ export const translations = {
         emailInvalid: 'يرجى إدخال بريد إلكتروني صحيح.',
         messageRequired: 'يرجى كتابة بعض تفاصيل المشروع.',
         rateLimit: 'يرجى الانتظار بضع ثوانٍ قبل إعادة الإرسال.',
+        unexpectedError: 'حدث خطأ غير متوقع. يرجى المحاولة مرة أخرى.',
       },
       success: {
         title: 'شكراً لك! سنتواصل معك خلال 24 ساعة',
@@ -781,6 +830,11 @@ export const translations = {
       minimizeAria: 'تصغير المحادثة',
       closeAria: 'إغلاق المحادثة',
       newChat: 'محادثة جديدة',
+      dismissBubbleAria: 'إغلاق الإشعار',
+      widgetAria: 'أداة المساعد الذكي',
+      openAria: 'فتح المساعد الذكي',
+      openTitle: 'تحدث مع المساعد الذكي لكافيرون',
+      dialogAria: 'محادثة المساعد الذكي',
       chips: [
         'خدماتنا',
         'الأسعار',
@@ -829,14 +883,20 @@ export const translations = {
           content: 'وكالة كافيرون الرقمية. لأي استفسارات قانونية أو متعلقة بخصوصية البيانات، يرجى مراسلتنا عبر البريد: hello@kaveron.com أو عبر صفحة التواصل.',
         },
       ],
-      backHome: '← العودة إلى الرئيسية',
+      backHome: 'العودة إلى الرئيسية',
     },
     notFoundPage: {
       badge: '// خطأ 404',
       title: 'الصفحة غير موجودة',
       description: 'الصفحة التي تبحث عنها غير موجودة، تم نقلها، أو أنها غير متاحة حالياً.',
-      backHome: '← العودة إلى الرئيسية',
+      backHome: 'العودة إلى الرئيسية',
       contactUs: 'تواصل معنا',
+    },
+    whatsapp: {
+      supportLabel: 'الدعم عبر واتساب',
+      chatAria: 'محادثة عبر واتساب',
+      chatTitle: 'محادثة مع كافيرون عبر واتساب',
+      tooltip: 'تواصل عبر واتساب',
     },
     footer: {
       description: 'استوديو رقمي حديث يبني مواقع الجيل الجديد، المتاجر الإلكترونية، والمنصات السحابية القابلة للتوسع للشركات الطموحة.',
@@ -847,6 +907,10 @@ export const translations = {
       rights: 'جميع الحقوق محفوظة.',
       adminLink: 'لوحة التحكم',
       privacyLink: 'سياسة الخصوصية',
+      backToTop: 'العودة للأعلى',
+      scrollToTop: 'العودة للأعلى',
+      systemsOperational: 'جميع الأنظمة تعمل بكفاءة',
+      homeAria: 'الرئيسية - كافيرون',
       socials: [
         { name: 'LinkedIn', href: 'https://linkedin.com', icon: 'Linkedin' },
         { name: 'Instagram', href: 'https://instagram.com', icon: 'Instagram' },

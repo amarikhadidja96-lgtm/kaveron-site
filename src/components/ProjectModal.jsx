@@ -239,7 +239,7 @@ export const ProjectModal = ({
                         isRtl ? nextImage() : prevImage();
                       }}
                       className="pointer-events-auto p-2 rounded-full bg-black/70 border border-white/20 text-white hover:text-[#00FF88] hover:border-[#00FF88] transition-colors"
-                      aria-label="Previous image"
+                      aria-label={modalT.prevImageAria || 'Previous image'}
                     >
                       {isRtl ? <ChevronRight className="w-5 h-5" /> : <ChevronLeft className="w-5 h-5" />}
                     </button>
@@ -250,7 +250,7 @@ export const ProjectModal = ({
                         isRtl ? prevImage() : nextImage();
                       }}
                       className="pointer-events-auto p-2 rounded-full bg-black/70 border border-white/20 text-white hover:text-[#00FF88] hover:border-[#00FF88] transition-colors"
-                      aria-label="Next image"
+                      aria-label={modalT.nextImageAria || 'Next image'}
                     >
                       {isRtl ? <ChevronLeft className="w-5 h-5" /> : <ChevronRight className="w-5 h-5" />}
                     </button>
@@ -282,7 +282,7 @@ export const ProjectModal = ({
                     >
                       <img
                         src={img}
-                        alt={`Thumbnail ${idx + 1}`}
+                        alt={`${modalT.thumbnailAlt || 'Thumbnail'} ${idx + 1}`}
                         width="160"
                         height="100"
                         loading="lazy"

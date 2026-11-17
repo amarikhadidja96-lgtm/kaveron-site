@@ -390,12 +390,12 @@ export const AdminChats = ({
         <div
           role="dialog"
           aria-modal="true"
-          className="fixed inset-0 z-50 flex justify-end bg-black/75 backdrop-blur-sm animate-fade-in"
+          className="fixed inset-0 z-50 flex justify-end rtl:justify-start bg-black/75 backdrop-blur-sm animate-fade-in"
           onClick={() => setSelectedSession(null)}
         >
           <div
             onClick={(e) => e.stopPropagation()}
-            className="w-full max-w-xl h-full bg-[#111111] border-s border-white/[0.1] shadow-2xl flex flex-col overflow-hidden"
+            className="w-full max-w-xl h-full bg-[#111111] border-s rtl:border-e rtl:border-s-0 border-white/[0.1] shadow-2xl flex flex-col overflow-hidden"
           >
             {/* Drawer Header */}
             <div className="px-6 py-4 border-b border-white/[0.08] bg-[#141414] flex items-center justify-between shrink-0">

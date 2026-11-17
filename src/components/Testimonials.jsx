@@ -104,7 +104,7 @@ export const Testimonials = ({ t, currentLang }) => {
               <div className="flex flex-col gap-6">
                 {/* Rating Stars & Quote Icon */}
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-1.5" aria-label="5 out of 5 stars">
+                  <div className="flex items-center gap-1.5" aria-label={t.testimonialsSection.ratingAria || '5 out of 5 stars'}>
                     {[...Array(activeTestimonial.rating || 5)].map((_, i) => (
                       <Star
                         key={i}
@@ -203,7 +203,7 @@ export const Testimonials = ({ t, currentLang }) => {
                       ? 'w-8 bg-[#00FF88] shadow-[0_0_12px_rgba(0,255,136,0.5)]'
                       : 'w-2 bg-white/20 hover:bg-white/40'
                   }`}
-                  aria-label={`Go to slide ${idx + 1}`}
+                  aria-label={`${t.testimonialsSection.goToSlideAria || 'Go to slide'} ${idx + 1}`}
                 />
               ))}
             </div>

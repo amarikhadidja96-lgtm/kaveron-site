@@ -696,7 +696,7 @@ export const AdminLeads = ({ t, currentLang, onToggleLang, onBackToSite, onNavig
 
       {/* Side Details Drawer */}
       {selectedLead && (
-        <div className="fixed inset-0 z-50 overflow-hidden bg-black/70 backdrop-blur-sm flex justify-end animate-fade-in">
+        <div className="fixed inset-0 z-50 overflow-hidden bg-black/70 backdrop-blur-sm flex justify-end rtl:justify-start animate-fade-in">
           <div
             className="w-full max-w-xl bg-[#111111] border-s border-white/15 h-full overflow-y-auto flex flex-col justify-between p-6 sm:p-8 shadow-2xl relative"
             dir={isRtl ? 'rtl' : 'ltr'}

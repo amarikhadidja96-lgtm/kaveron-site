@@ -149,7 +149,7 @@ export const Contact = ({
       if (onClearPlan) onClearPlan();
     } catch (err) {
       console.error('Submission error:', err);
-      setErrors({ general: 'An unexpected error occurred. Please try again.' });
+      setErrors({ general: contactT.validation?.unexpectedError || 'An unexpected error occurred. Please try again.' });
     } finally {
       setIsSubmitting(false);
     }
@@ -200,7 +200,7 @@ export const Contact = ({
           <div className="lg:col-span-5 space-y-6">
             <div>
               <span className="font-mono text-xs text-[#00FF88] tracking-widest uppercase mb-2 block">
-                // GET CONNECTED
+                {contactT.getConnectedBadge || '// GET CONNECTED'}
               </span>
               <h3 className="text-2xl sm:text-3xl font-heading font-extrabold text-white tracking-tight mb-4">
                 {contactT.cards.emailTitle}
@@ -391,6 +391,7 @@ export const Contact = ({
                       <input
                         id="contact-email"
                         type="email"
+                        dir="ltr"
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
@@ -421,6 +422,7 @@ export const Contact = ({
                       <input
                         id="contact-phone"
                         type="tel"
+                        dir="ltr"
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
@@ -475,10 +477,10 @@ export const Contact = ({
                       onChange={handleChange}
                       className="w-full px-4 py-3 rounded-xl bg-[#161616] border border-white/10 text-sm text-white focus:outline-none focus:border-[#00FF88] focus:shadow-[0_0_12px_rgba(0,255,136,0.25)] transition-all cursor-pointer"
                     >
-                      <option value="Under $500">Under $500</option>
-                      <option value="$500-$1500">$500 - $1,500</option>
-                      <option value="$1500-$5000">$1,500 - $5,000</option>
-                      <option value="$5000+">$5,000+</option>
+                      <option value="Under $500">{contactT.form?.budgets?.[0] || 'Under $500'}</option>
+                      <option value="$500-$1500">{contactT.form?.budgets?.[1] || '$500 - $1,500'}</option>
+                      <option value="$1500-$5000">{contactT.form?.budgets?.[2] || '$1,500 - $5,000'}</option>
+                      <option value="$5000+">{contactT.form?.budgets?.[3] || '$5,000+'}</option>
                     </select>
                   </div>
 
