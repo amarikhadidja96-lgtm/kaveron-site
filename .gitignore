@@ -1,0 +1,25 @@
+# Dependencies
+node_modules
+/.pnp
+.pnp.js
+
+# Testing and scratch logs
+/scratch
+/coverage
+*.log
+
+# Production build artifacts
+/dist
+
+# Local environment configuration
+.env
+.env.local
+.env.*.local
+
+# Editor and OS files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+Thumbs.db
+
