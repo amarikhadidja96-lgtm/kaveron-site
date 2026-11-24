@@ -1,5 +1,6 @@
 import React from 'react';
-import { Mail, Globe, ArrowUp } from 'lucide-react';
+import { Mail, Globe, ArrowUp, MessageSquare } from 'lucide-react';
+import { contactConfig, isPlaceholder, getWhatsAppLink } from '../config/contact.config';
 
 // Crisp, pixel-perfect SVGs for brand socials
 const SocialIcons = {
@@ -44,9 +45,21 @@ export const Footer = ({ t, onNavigate }) => {
   };
 
   const currentYear = new Date().getFullYear();
+  const isRtl = typeof document !== 'undefined' ? document.documentElement.dir === 'rtl' : false;
+
+  const hasEmail = Boolean(contactConfig.email && !isPlaceholder(contactConfig.email));
+  const whatsappUrl = getWhatsAppLink(isRtl ? 'ar' : 'en');
+  const hasWhatsApp = Boolean(whatsappUrl);
+
+  const socialList = [
+    { name: 'LinkedIn', icon: 'Linkedin', href: contactConfig.socials?.linkedin },
+    { name: 'Instagram', icon: 'Instagram', href: contactConfig.socials?.instagram },
+    { name: 'X (Twitter)', icon: 'Twitter', href: contactConfig.socials?.twitter },
+    { name: 'GitHub', icon: 'Github', href: contactConfig.socials?.github },
+  ].filter((s) => Boolean(s.href && !isPlaceholder(s.href)));
 
   return (
-    <footer className="relative bg-[#0A0A0A] border-t border-white/[0.08] pt-16 pb-12 overflow-hidden">
+    <footer className="relative bg-[#0A0A0A] border-t border-white/[0.08] pt-16 pb-28 md:pb-32 overflow-hidden">
       {/* Soft neon accent glow line */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 max-w-4xl h-[1px] bg-gradient-to-r from-transparent via-[#00FF88]/40 to-transparent" />
 
@@ -71,14 +84,30 @@ export const Footer = ({ t, onNavigate }) => {
               {t.footer.description}
             </p>
 
-            {/* Email link badge */}
-            <a
-              href={`mailto:${t.footer.email}`}
-              className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-[#111111] border border-white/[0.08] text-xs font-mono text-white hover:border-[#00FF88]/40 hover:text-[#00FF88] transition-colors duration-200"
-            >
-              <Mail className="w-3.5 h-3.5 text-[#00FF88]" />
-              <span>{t.footer.email}</span>
-            </a>
+            {/* Contact badges (Email & WhatsApp - rendered only if configured) */}
+            <div className="flex flex-col sm:flex-row flex-wrap items-start gap-2.5">
+              {hasEmail && (
+                <a
+                  href={`mailto:${contactConfig.email}`}
+                  className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-[#111111] border border-white/[0.08] text-xs font-mono text-white hover:border-[#00FF88]/40 hover:text-[#00FF88] transition-colors duration-200"
+                >
+                  <Mail className="w-3.5 h-3.5 text-[#00FF88]" />
+                  <span>{contactConfig.email}</span>
+                </a>
+              )}
+              {hasWhatsApp && (
+                <a
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-[#111111] border border-white/[0.08] text-xs font-mono text-white hover:border-[#00FF88]/40 hover:text-[#00FF88] transition-colors duration-200"
+                  aria-label={t?.whatsapp?.chatAria || 'WhatsApp'}
+                >
+                  <MessageSquare className="w-3.5 h-3.5 text-[#00FF88]" />
+                  <span dir="ltr">{contactConfig.whatsapp}</span>
+                </a>
+              )}
+            </div>
           </div>
 
           {/* Quick Links (3 cols) */}
@@ -120,24 +149,26 @@ export const Footer = ({ t, onNavigate }) => {
                 {t.footer.status}
               </p>
 
-              {/* Social Media Links */}
-              <div className="flex items-center gap-3">
-                {t.footer.socials.map((social) => {
-                  const IconComponent = SocialIcons[social.icon];
-                  return (
-                    <a
-                      key={social.name}
-                      href={social.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-10 h-10 rounded-xl bg-[#111111] border border-white/[0.08] flex items-center justify-center text-[#A1A1AA] hover:text-[#00FF88] hover:border-[#00FF88]/50 hover:shadow-[0_0_15px_rgba(0,255,136,0.25)] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00FF88]"
-                      aria-label={social.name}
-                    >
-                      {IconComponent ? <IconComponent className="w-4 h-4" /> : <Globe className="w-4 h-4" />}
-                    </a>
-                  );
-                })}
-              </div>
+              {/* Social Media Links (rendered only if URLs are provided) */}
+              {socialList.length > 0 && (
+                <div className="flex items-center gap-3">
+                  {socialList.map((social) => {
+                    const IconComponent = SocialIcons[social.icon];
+                    return (
+                      <a
+                        key={social.name}
+                        href={social.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-10 h-10 rounded-xl bg-[#111111] border border-white/[0.08] flex items-center justify-center text-[#A1A1AA] hover:text-[#00FF88] hover:border-[#00FF88]/50 hover:shadow-[0_0_15px_rgba(0,255,136,0.25)] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00FF88]"
+                        aria-label={social.name}
+                      >
+                        {IconComponent ? <IconComponent className="w-4 h-4" /> : <Globe className="w-4 h-4" />}
+                      </a>
+                    );
+                  })}
+                </div>
+              )}
             </div>
 
             {/* Back to top button */}
@@ -166,10 +197,6 @@ export const Footer = ({ t, onNavigate }) => {
             >
               {t.footer.privacyLink || 'Privacy Policy'}
             </a>
-          </div>
-          <div className="flex items-center gap-4 text-xs font-mono">
-            <span className="inline-block w-2 h-2 rounded-full bg-[#00FF88] animate-pulse" />
-            <span className="text-[#A1A1AA]">{t.footer.systemsOperational || 'All systems operational'}</span>
           </div>
         </div>
       </div>

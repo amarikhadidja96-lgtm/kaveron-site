@@ -2,6 +2,7 @@ import React from 'react';
 import { ShieldCheck, ArrowLeft, ArrowRight, Lock, FileText } from 'lucide-react';
 import Badge from './common/Badge';
 import Button from './common/Button';
+import { contactConfig, isPlaceholder } from '../config/contact.config';
 
 export const Privacy = ({ t, currentLang, onBackToHome }) => {
   const isRtl = currentLang === 'ar';
@@ -66,7 +67,9 @@ export const Privacy = ({ t, currentLang, onBackToHome }) => {
         {/* Bottom CTA */}
         <div className="mt-12 pt-8 border-t border-white/[0.08] flex flex-col sm:flex-row items-center justify-between gap-4">
           <p dir="ltr" className="text-xs text-[#71717A]">
-            Kaveron Agency • hello@kaveron.com
+            {contactConfig.email && !isPlaceholder(contactConfig.email)
+              ? `Kaveron Agency • ${contactConfig.email}`
+              : 'Kaveron Agency'}
           </p>
           <Button
             href="/"

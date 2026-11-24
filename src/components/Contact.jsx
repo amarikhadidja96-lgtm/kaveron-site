@@ -4,6 +4,7 @@ import SectionTitle from './common/SectionTitle';
 import Button from './common/Button';
 import BackToHome from './common/BackToHome';
 import { submitLead } from '../lib/leads';
+import { contactConfig, isPlaceholder, getWhatsAppLink, getCleanWhatsAppNumber } from '../config/contact.config';
 
 export const Contact = ({
   t,
@@ -212,49 +213,53 @@ export const Contact = ({
 
             {/* Direct Contact Cards */}
             <div className="space-y-4">
-              {/* Email Card */}
-              <a
-                href={`mailto:${contactT.cards.emailValue}`}
-                className="group p-5 rounded-[18px] bg-[#111111]/90 border border-white/[0.08] backdrop-blur-xl flex items-center gap-4 transition-all duration-300 hover:border-[#00FF88]/40 hover:shadow-[0_0_20px_rgba(0,255,136,0.18)] hover:-translate-y-1 block"
-              >
-                <div className="w-12 h-12 rounded-xl bg-[#00FF88]/10 border border-[#00FF88]/20 flex items-center justify-center text-[#00FF88] shrink-0 group-hover:scale-110 group-hover:shadow-[0_0_15px_rgba(0,255,136,0.35)] transition-all">
-                  <Mail className="w-5 h-5" />
-                </div>
-                <div>
-                  <span className="text-xs font-mono text-[#71717A] uppercase tracking-wider block">
-                    {contactT.cards.emailTitle}
-                  </span>
-                  <span className="text-sm sm:text-base font-semibold text-white group-hover:text-[#00FF88] transition-colors">
-                    {contactT.cards.emailValue}
-                  </span>
-                  <span className="text-xs text-[#A1A1AA] block mt-0.5">
-                    {contactT.cards.emailSub}
-                  </span>
-                </div>
-              </a>
+              {/* Email Card (rendered only if email is configured) */}
+              {contactConfig.email && !isPlaceholder(contactConfig.email) && (
+                <a
+                  href={`mailto:${contactConfig.email}`}
+                  className="group p-5 rounded-[18px] bg-[#111111]/90 border border-white/[0.08] backdrop-blur-xl flex items-center gap-4 transition-all duration-300 hover:border-[#00FF88]/40 hover:shadow-[0_0_20px_rgba(0,255,136,0.18)] hover:-translate-y-1 block"
+                >
+                  <div className="w-12 h-12 rounded-xl bg-[#00FF88]/10 border border-[#00FF88]/20 flex items-center justify-center text-[#00FF88] shrink-0 group-hover:scale-110 group-hover:shadow-[0_0_15px_rgba(0,255,136,0.35)] transition-all">
+                    <Mail className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <span className="text-xs font-mono text-[#71717A] uppercase tracking-wider block">
+                      {contactT.cards.emailTitle}
+                    </span>
+                    <span className="text-sm sm:text-base font-semibold text-white group-hover:text-[#00FF88] transition-colors">
+                      {contactConfig.email}
+                    </span>
+                    <span className="text-xs text-[#A1A1AA] block mt-0.5">
+                      {contactT.cards.emailSub}
+                    </span>
+                  </div>
+                </a>
+              )}
 
-              {/* WhatsApp Card */}
-              <a
-                href={`https://wa.me/213657401196`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group p-5 rounded-[18px] bg-[#111111]/90 border border-white/[0.08] backdrop-blur-xl flex items-center gap-4 transition-all duration-300 hover:border-[#00FF88]/40 hover:shadow-[0_0_20px_rgba(0,255,136,0.18)] hover:-translate-y-1 block"
-              >
-                <div className="w-12 h-12 rounded-xl bg-[#00FF88]/10 border border-[#00FF88]/20 flex items-center justify-center text-[#00FF88] shrink-0 group-hover:scale-110 group-hover:shadow-[0_0_15px_rgba(0,255,136,0.35)] transition-all">
-                  <MessageCircle className="w-5 h-5" />
-                </div>
-                <div>
-                  <span className="text-xs font-mono text-[#71717A] uppercase tracking-wider block">
-                    {contactT.cards.whatsappTitle}
-                  </span>
-                  <span className="text-sm sm:text-base font-semibold text-white group-hover:text-[#00FF88] transition-colors">
-                    {contactT.cards.whatsappValue}
-                  </span>
-                  <span className="text-xs text-[#A1A1AA] block mt-0.5">
-                    {contactT.cards.whatsappSub}
-                  </span>
-                </div>
-              </a>
+              {/* WhatsApp Card (rendered only if WhatsApp is configured) */}
+              {getWhatsAppLink(isRtl ? 'ar' : 'en') && !isPlaceholder(contactConfig.whatsapp) && (
+                <a
+                  href={getWhatsAppLink(isRtl ? 'ar' : 'en')}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group p-5 rounded-[18px] bg-[#111111]/90 border border-white/[0.08] backdrop-blur-xl flex items-center gap-4 transition-all duration-300 hover:border-[#00FF88]/40 hover:shadow-[0_0_20px_rgba(0,255,136,0.18)] hover:-translate-y-1 block"
+                >
+                  <div className="w-12 h-12 rounded-xl bg-[#00FF88]/10 border border-[#00FF88]/20 flex items-center justify-center text-[#00FF88] shrink-0 group-hover:scale-110 group-hover:shadow-[0_0_15px_rgba(0,255,136,0.35)] transition-all">
+                    <MessageCircle className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <span className="text-xs font-mono text-[#71717A] uppercase tracking-wider block">
+                      {contactT.cards.whatsappTitle}
+                    </span>
+                    <span className="text-sm sm:text-base font-semibold text-white group-hover:text-[#00FF88] transition-colors" dir="ltr">
+                      {contactConfig.whatsapp}
+                    </span>
+                    <span className="text-xs text-[#A1A1AA] block mt-0.5">
+                      {contactT.cards.whatsappSub}
+                    </span>
+                  </div>
+                </a>
+              )}
 
               {/* Working Hours Card */}
               <div className="p-5 rounded-[18px] bg-[#111111]/70 border border-white/[0.06] backdrop-blur-xl flex items-center gap-4">
@@ -371,8 +376,8 @@ export const Contact = ({
                         aria-describedby={errors.name ? 'contact-name-error' : undefined}
                         placeholder={contactT.form.namePlaceholder}
                         className={`w-full px-4 py-3 rounded-xl bg-[#161616] border text-sm text-white placeholder-[#52525B] focus:outline-none transition-all ${errors.name
-                            ? 'border-red-500/60 focus:border-red-500'
-                            : 'border-white/10 focus:border-[#00FF88] focus:shadow-[0_0_12px_rgba(0,255,136,0.25)]'
+                          ? 'border-red-500/60 focus:border-red-500'
+                          : 'border-white/10 focus:border-[#00FF88] focus:shadow-[0_0_12px_rgba(0,255,136,0.25)]'
                           }`}
                       />
                       {errors.name && (
@@ -399,8 +404,8 @@ export const Contact = ({
                         aria-describedby={errors.email ? 'contact-email-error' : undefined}
                         placeholder={contactT.form.emailPlaceholder}
                         className={`w-full px-4 py-3 rounded-xl bg-[#161616] border text-sm text-white placeholder-[#52525B] focus:outline-none transition-all ${errors.email
-                            ? 'border-red-500/60 focus:border-red-500'
-                            : 'border-white/10 focus:border-[#00FF88] focus:shadow-[0_0_12px_rgba(0,255,136,0.25)]'
+                          ? 'border-red-500/60 focus:border-red-500'
+                          : 'border-white/10 focus:border-[#00FF88] focus:shadow-[0_0_12px_rgba(0,255,136,0.25)]'
                           }`}
                       />
                       {errors.email && (
@@ -502,8 +507,8 @@ export const Contact = ({
                       aria-describedby={errors.message ? 'contact-message-error' : undefined}
                       placeholder={contactT.form.messagePlaceholder}
                       className={`w-full px-4 py-3 rounded-xl bg-[#161616] border text-sm text-white placeholder-[#52525B] focus:outline-none transition-all resize-none ${errors.message
-                          ? 'border-red-500/60 focus:border-red-500'
-                          : 'border-white/10 focus:border-[#00FF88] focus:shadow-[0_0_12px_rgba(0,255,136,0.25)]'
+                        ? 'border-red-500/60 focus:border-red-500'
+                        : 'border-white/10 focus:border-[#00FF88] focus:shadow-[0_0_12px_rgba(0,255,136,0.25)]'
                         }`}
                     />
                     {errors.message && (

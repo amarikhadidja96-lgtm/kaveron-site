@@ -4,13 +4,15 @@
  * Formats and dispatches email notifications whenever a new lead submits the contact or pricing form.
  */
 
+import { contactConfig, isPlaceholder } from '../config/contact.config';
+
 const NOTIFICATIONS_STORAGE_KEY = 'kaveron_email_notifications';
 
 export const sendLeadNotification = async (lead) => {
   const notificationPayload = {
     id: `notif_${Date.now()}`,
     timestamp: new Date().toISOString(),
-    recipient: 'hello@kaveron.com',
+    recipient: contactConfig.email && !isPlaceholder(contactConfig.email) ? contactConfig.email : 'notifications@internal',
     subject: `🚀 New Lead from ${lead.name} [${lead.service_type}]`,
     data: {
       name: lead.name,

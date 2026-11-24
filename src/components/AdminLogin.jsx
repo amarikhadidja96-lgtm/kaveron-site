@@ -133,7 +133,7 @@ export const AdminLogin = ({ t, currentLang, onToggleLang, onBackToSite, onNavig
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="admin@kaveron.com"
+                  placeholder="admin@example.com"
                   required
                   autoFocus
                   className="w-full px-4 py-3 ps-10 rounded-xl bg-[#161616] border border-white/10 text-white placeholder-[#52525B] text-sm focus:outline-none focus:border-[#00FF88] focus:shadow-[0_0_12px_rgba(0,255,136,0.3)] transition-all font-mono"

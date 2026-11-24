@@ -4,6 +4,8 @@
  * Open Graph, Twitter cards, hreflang alternates, and JSON-LD schema.
  */
 
+import { contactConfig, isPlaceholder } from '../config/contact.config';
+
 export const getSiteUrl = () => {
   // Use Vite env variable or fallback to production domain, never localhost in production metadata
   if (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.VITE_SITE_URL) {
@@ -183,13 +185,14 @@ export const updatePageSEO = (route, lang = 'en') => {
             currentLang === 'ar'
               ? 'وكالة رقمية حديثة تبني مواقع ومتاجر إلكترونية وصفحات هبوط وتطبيقات ويب سريعة.'
               : 'Modern digital agency crafting websites, online stores, landing pages, and scalable web apps.',
-          email: 'hello@kaveron.com',
-          sameAs: [
-            'https://linkedin.com',
-            'https://instagram.com',
-            'https://x.com',
-            'https://github.com',
-          ],
+          ...(contactConfig.email && !isPlaceholder(contactConfig.email) ? { email: contactConfig.email } : {}),
+          ...(Object.values(contactConfig.socials || {}).filter((url) => url && !isPlaceholder(url)).length > 0
+            ? {
+                sameAs: Object.values(contactConfig.socials || {}).filter(
+                  (url) => url && !isPlaceholder(url)
+                ),
+              }
+            : {}),
         },
         {
           '@type': 'WebSite',

@@ -101,17 +101,34 @@ export const ChatWidget = ({ t, currentLang }) => {
     setMessages([welcomeMsg]);
   }, [currentLang, isRtl]);
 
-  // Show welcome bubble after 5 seconds
+  // Show welcome bubble after 5 seconds, auto-hide after 10 seconds, and never show again in same session
   useEffect(() => {
-    const timer = setTimeout(() => {
-      // Only show if chat has not been opened yet
-      const opened = sessionStorage.getItem('kaveron_chat_opened');
-      if (!opened) {
+    const dismissed = sessionStorage.getItem('kaveron_welcome_bubble_dismissed');
+    const opened = sessionStorage.getItem('kaveron_chat_opened');
+    if (dismissed || opened) {
+      return;
+    }
+
+    let hideTimer = null;
+    const showTimer = setTimeout(() => {
+      const isAlreadyDismissed =
+        sessionStorage.getItem('kaveron_welcome_bubble_dismissed') ||
+        sessionStorage.getItem('kaveron_chat_opened');
+      if (!isAlreadyDismissed) {
         setShowWelcomeBubble(true);
+
+        // Hide after 10 seconds and never show again in this session
+        hideTimer = setTimeout(() => {
+          setShowWelcomeBubble(false);
+          sessionStorage.setItem('kaveron_welcome_bubble_dismissed', 'true');
+        }, 10000);
       }
     }, 5000);
 
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(showTimer);
+      if (hideTimer) clearTimeout(hideTimer);
+    };
   }, []);
 
   // Scroll to bottom whenever messages or typing changes
@@ -125,6 +142,7 @@ export const ChatWidget = ({ t, currentLang }) => {
   useEffect(() => {
     if (isOpen) {
       setShowWelcomeBubble(false);
+      sessionStorage.setItem('kaveron_welcome_bubble_dismissed', 'true');
       sessionStorage.setItem('kaveron_chat_opened', 'true');
       setTimeout(() => inputRef.current?.focus(), 150);
     }
@@ -272,10 +290,14 @@ export const ChatWidget = ({ t, currentLang }) => {
       {showWelcomeBubble && !isOpen && (
         <div
           role="status"
-          className="fixed bottom-24 end-6 z-40 animate-fade-in select-none"
+          className="fixed bottom-24 end-4 sm:end-6 z-40 animate-fade-in select-none"
         >
           <div
-            onClick={() => setIsOpen(true)}
+            onClick={() => {
+              setIsOpen(true);
+              setShowWelcomeBubble(false);
+              sessionStorage.setItem('kaveron_welcome_bubble_dismissed', 'true');
+            }}
             className="group relative flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-[#111111]/95 border border-[#00FF88]/40 shadow-[0_0_20px_rgba(0,255,136,0.3)] backdrop-blur-md cursor-pointer hover:border-[#00FF88] hover:scale-105 transition-all duration-300"
           >
             <span className="w-2 h-2 rounded-full bg-[#00FF88] animate-ping" />
@@ -287,6 +309,7 @@ export const ChatWidget = ({ t, currentLang }) => {
               onClick={(e) => {
                 e.stopPropagation();
                 setShowWelcomeBubble(false);
+                sessionStorage.setItem('kaveron_welcome_bubble_dismissed', 'true');
               }}
               className="text-[#71717A] hover:text-white ms-1 p-0.5"
               aria-label={chatT.dismissBubbleAria || 'Dismiss notification'}
@@ -301,7 +324,7 @@ export const ChatWidget = ({ t, currentLang }) => {
       {!isOpen && (
         <aside
           aria-label={chatT.widgetAria || 'AI Chat Widget'}
-          className="fixed bottom-6 end-6 z-40 select-none"
+          className="fixed bottom-6 end-4 sm:end-6 z-40 select-none"
         >
           <button
             type="button"
@@ -328,7 +351,7 @@ export const ChatWidget = ({ t, currentLang }) => {
           role="dialog"
           aria-modal="true"
           aria-label={chatT.dialogAria || 'AI Assistant Chat'}
-          className="fixed bottom-6 end-6 z-50 w-full sm:w-[380px] h-[100dvh] sm:h-[560px] max-h-[100dvh] sm:max-h-[85vh] sm:rounded-[24px] bg-[#111111]/95 border border-[#00FF88]/40 shadow-[0_0_45px_rgba(0,255,136,0.22)] backdrop-blur-2xl flex flex-col overflow-hidden animate-fade-in"
+          className="fixed bottom-6 end-4 sm:end-6 z-50 w-full sm:w-[380px] h-[100dvh] sm:h-[560px] max-h-[100dvh] sm:max-h-[85vh] sm:rounded-[24px] bg-[#111111]/95 border border-[#00FF88]/40 shadow-[0_0_45px_rgba(0,255,136,0.22)] backdrop-blur-2xl flex flex-col overflow-hidden animate-fade-in"
         >
           {/* Top Neon Accent Line */}
           <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#00FF88] to-transparent shadow-[0_0_12px_rgba(0,255,136,0.6)] z-20" />
