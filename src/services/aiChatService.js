@@ -715,9 +715,9 @@ const finalizeAndSaveLead = async (sessionId, state, currentFlowLang) => {
   }
 
   const promptLang = currentFlowLang;
-  if (promptLang === 'ar') return 'شكراً لك! تم استلام بياناتك وسنتواصل معك خلال 24 ساعة.';
-  if (promptLang === 'fr') return 'Merci ! Nous avons bien reçu vos coordonnées et nous vous recontacterons dans les 24 heures.';
-  return "Thanks! We've received your details and will get back to you within 24 hours.";
+  if (promptLang === 'ar') return 'شكراً لك! تم استلام بياناتك وسنتواصل معك قريباً.';
+  if (promptLang === 'fr') return 'Merci ! Nous avons bien reçu vos coordonnées et nous vous recontacterons bientôt.';
+  return "Thanks! We've received your details and will get back to you shortly.";
 };
 
 /**

@@ -29,13 +29,16 @@ export const translations = {
       homeAria: 'kaveron home',
       languageMenuLabel: 'Language',
     },
+    about: {
+      full: 'Kaveron is a digital agency that designs and builds websites, online stores, landing pages, and web apps and dashboards, in English and Arabic.',
+    },
     hero: {
       badge: '// Available for new projects',
       headlineStart: 'We build ',
       headlineHighlight1: 'digital products',
       headlineMiddle: ' that ',
       headlineHighlight2: 'grow your business',
-      subtitle: 'Websites, online stores, landing pages and web apps, designed to look great and convert.',
+      subtitle: 'Websites, online stores, landing pages, and web apps and dashboards in English and Arabic.',
       primaryCta: 'Start a Project',
       secondaryCta: 'View Projects',
       stats: [
@@ -47,7 +50,7 @@ export const translations = {
     services: {
       badge: '// WHAT WE DO',
       title: 'What We Build',
-      subtitle: 'Engineered for speed, built with precision, and tailored to convert your visitors into lasting customers.',
+      subtitle: 'Web design and development services tailored to your business needs.',
       learnMore: 'Learn more',
       includedLabel: '// Included with every project',
       included: ['Domain & Hosting — 1st Year', 'Responsive Design', 'Basic SEO'],
@@ -68,7 +71,7 @@ export const translations = {
           id: 'landing-pages',
           icon: 'Zap',
           title: 'Landing Pages',
-          description: 'High-converting pages designed specifically for paid ads and product launches.',
+          description: 'Landing pages designed for marketing campaigns and product launches.',
           bullets: [
             'Conversion-focused layout',
             'Fast loading',
@@ -93,7 +96,7 @@ export const translations = {
     projectsSection: {
       badge: '// FEATURED WORK',
       title: 'Featured Projects',
-      subtitle: 'Crafted with precision, high-velocity performance, and modern aesthetic elegance.',
+      subtitle: 'Selected websites, online stores, and web applications built for our clients.',
       backToHome: 'Back to Home',
       allFilter: 'All Projects',
       conceptBadge: 'Concept',
@@ -101,7 +104,7 @@ export const translations = {
       visitLive: 'Live Site',
       featuredBadge: 'Featured',
       nextCardTitle: 'Your project could be next',
-      nextCardSubtitle: 'Have a vision for your brand, startup, or product? Let’s partner to build an extraordinary digital experience.',
+      nextCardSubtitle: 'Have a project in mind? Contact us to discuss your requirements and get started.',
       nextCardCta: 'Start a Project',
       nextCollabBadge: '// NEXT COLLABORATION',
       modal: {
@@ -138,49 +141,49 @@ export const translations = {
     process: {
       badge: '// OUR METHODOLOGY',
       title: 'How We Work',
-      subtitle: 'A transparent, collaborative 5-step process turning your concepts into battle-tested digital reality.',
+      subtitle: 'A structured 5-step process to plan, design, build, and deliver your project.',
       steps: [
         {
           step: '01',
           icon: 'Search',
           title: 'Discovery',
-          description: 'We understand your goals, audience and requirements through deep-dive strategy sessions and competitive research.',
+          description: 'We review your goals, target audience, and project requirements to outline the scope.',
         },
         {
           step: '02',
           icon: 'Palette',
           title: 'Design',
-          description: 'Wireframes and a modern UI/UX design for your approval, crafted with high-fidelity prototypes and design systems.',
+          description: 'Wireframes and responsive UI/UX designs shared for your review and approval.',
         },
         {
           step: '03',
           icon: 'Code2',
           title: 'Development',
-          description: 'Clean, fast and scalable code built on modern architectures with component reusability and bulletproof security.',
+          description: 'Front-end and back-end development using clean code, component architecture, and standard security practices.',
         },
         {
           step: '04',
           icon: 'ShieldCheck',
           title: 'Testing',
-          description: 'Rigorous quality checks on all devices and browsers, verifying performance, accessibility, responsiveness, and speed.',
+          description: 'Quality assurance across major browsers and devices to verify responsiveness and functionality.',
         },
         {
           step: '05',
           icon: 'Rocket',
           title: 'Launch & Support',
-          description: 'Deployment, training and ongoing maintenance to guarantee smooth rollouts, zero downtime, and continuous growth.',
+          description: 'Production deployment, project handover, and post-launch support as agreed for your project.',
         },
       ],
     },
     techStack: {
       badge: '// MODERN STACK',
       title: 'Technologies We Use',
-      subtitle: 'We select battle-tested, ultra-fast technologies engineered for reliability, security, and effortless scaling.',
+      subtitle: 'Modern web technologies chosen for stability, security, and maintainability.',
     },
     testimonialsSection: {
       badge: '// CLIENT VOICES',
       title: 'What Clients Say',
-      subtitle: 'Trusted by founders, product leaders, and ambitious companies around the world.',
+      subtitle: 'Feedback from clients we have worked with.',
       prevLabel: 'Previous testimonial',
       nextLabel: 'Next testimonial',
       ratingAria: '5 out of 5 stars',
@@ -189,7 +192,7 @@ export const translations = {
     faq: {
       badge: '// COMMON QUESTIONS',
       title: 'Frequently Asked Questions',
-      subtitle: 'Everything you need to know about our workflow, pricing, guarantees, and technology choices.',
+      subtitle: 'Answers to common questions about our services, workflow, and pricing.',
       items: [
         {
           question: 'How long does it take to build a website or web app?',
@@ -209,7 +212,7 @@ export const translations = {
         {
           question: 'Do you offer maintenance and support after launch?',
           answer:
-            'Yes. Every engagement includes a 30-day post-launch warranty period for bug fixes and adjustments at zero extra cost. We also provide ongoing monthly retainer packages covering security updates, server monitoring, speed optimization, and regular feature enhancements.',
+            'Yes. Post-launch support is agreed per project and detailed in your quote. We also offer monthly maintenance packages covering updates, monitoring, and ongoing improvements.',
         },
         {
           question: 'Can I request changes during development?',
@@ -224,10 +227,10 @@ export const translations = {
       ],
     },
     ctaBanner: {
-      badge: '// READY TO ELEVATE?',
+      badge: '// START A PROJECT',
       headline: "Have an idea? Let's build it together.",
       subtitle:
-        'Tell us about your project vision, timeline, and goals. We will turn your concept into a standout digital product.',
+        'Tell us about your project goals and timeline. We will help you plan and build the right solution.',
       buttonText: 'Start a Project',
     },
     contactSection: {
@@ -239,7 +242,7 @@ export const translations = {
       breadcrumbContact: 'Contact',
       projectSimilarTemplate: "I'm interested in a project similar to",
       title: "Let's Build Something Great",
-      subtitle: "Ready to elevate your online presence? Send us your project details and we will respond with an actionable proposal within 24 hours.",
+      subtitle: "Send us your project details and we will get back to you.",
       cards: {
         emailTitle: 'Email Us',
         emailSub: 'Quick response for all inquiries',
@@ -290,8 +293,8 @@ export const translations = {
         unexpectedError: 'An unexpected error occurred. Please try again.',
       },
       success: {
-        title: "Thanks! We'll get back to you within 24 hours",
-        text: 'Your project details have been received and logged in our system. An engineer will review your brief and send you a detailed reply shortly.',
+        title: "Thanks! We've received your inquiry",
+        text: 'Your project details have been received. Our team will review your requirements and reply shortly.',
         anotherBtn: 'Send Another Inquiry',
       },
     },
@@ -439,7 +442,7 @@ export const translations = {
       tooltip: 'WhatsApp Direct',
     },
     footer: {
-      description: 'A modern digital studio engineering next-generation websites, online stores, and scalable web platforms for visionary brands.',
+      description: 'Kaveron is a digital agency that designs and builds websites, online stores, landing pages, and web apps and dashboards, in English and Arabic.',
       quickLinksTitle: 'Quick Links',
       contactTitle: 'Get in Touch',
       email: '',
@@ -483,13 +486,16 @@ export const translations = {
       homeAria: 'الرئيسية - كافيرون',
       languageMenuLabel: 'اللغة',
     },
+    about: {
+      full: 'كافيرون وكالة رقمية تصمم وتبني المواقع والمتاجر الإلكترونية وصفحات الهبوط وتطبيقات الويب ولوحات التحكم، بالعربية والإنجليزية.',
+    },
     hero: {
       badge: '// متاحون للمشاريع الجديدة',
       headlineStart: 'نبني ',
       headlineHighlight1: 'منتجات رقمية',
       headlineMiddle: ' تساهم في ',
       headlineHighlight2: 'نمو أعمالك',
-      subtitle: 'مواقع إلكترونية، متاجر إلكترونية، صفحات هبوط وتطبيقات الويب، مصممة بمظهر استثنائي وقدرة فائقة على التحويل.',
+      subtitle: 'مواقع إلكترونية، متاجر إلكترونية، صفحات هبوط، وتطبيقات ويب ولوحات تحكم باللغتين العربية والإنجليزية.',
       primaryCta: 'ابدأ مشروعك',
       secondaryCta: 'استكشف أعمالنا',
       stats: [
@@ -501,7 +507,7 @@ export const translations = {
     services: {
       badge: '// ما نقدمه',
       title: 'ماذا نبني',
-      subtitle: 'حلول رقمية متكاملة مصممة بأعلى معايير السرعة والإتقان لتحويل زوارك إلى عملاء أوفياء لعلامتك.',
+      subtitle: 'خدمات تصميم وتطوير مواقع وتطبيقات ويب مخصصة وفق متطلبات مشروعك.',
       learnMore: 'اكتشف المزيد',
       includedLabel: '// مشمول مع كل مشروع',
       included: ['نطاق واستضافة — السنة الأولى', 'تصميم متجاوب', 'تهيئة SEO أساسية'],
@@ -522,7 +528,7 @@ export const translations = {
           id: 'landing-pages',
           icon: 'Zap',
           title: 'صفحات الهبوط',
-          description: 'صفحات هبوط مخصصة للحملات الإعلانية المدفوعة وإطلاق المنتجات والخدمات.',
+          description: 'صفحات هبوط مخصصة للحملات الإعلانية وإطلاق المنتجات والخدمات.',
           bullets: [
             'تصميم موجّه نحو التحويل والمبيعات',
             'تحميل سريع',
@@ -547,7 +553,7 @@ export const translations = {
     projectsSection: {
       badge: '// أعمالنا المختارة',
       title: 'مشاريع مختارة',
-      subtitle: 'نخبة من إبداعاتنا الرقمية المصممة لتقديم تجارب استثنائية وتحقيق نتائج ملموسة لنمو الأعمال.',
+      subtitle: 'مجموعة مختارة من المواقع والمتاجر وتطبيقات الويب التي قمنا ببنائها لعملائنا.',
       backToHome: 'العودة إلى الرئيسية ←',
       allFilter: 'كافة المشاريع',
       conceptBadge: 'نموذج تجريبي',
@@ -555,7 +561,7 @@ export const translations = {
       visitLive: 'الموقع المباشر',
       featuredBadge: 'مشروع مميز',
       nextCardTitle: 'مشروعك القادم قد يكون هنا',
-      nextCardSubtitle: 'جاهز لتحويل فكرتك إلى تجربة رقمية استثنائية؟ دعنا نتعاون لبناء منتج رقمي متكامل يليق بطموحك.',
+      nextCardSubtitle: 'هل لديك فكرة مشروع؟ تواصل معنا لمناقشة متطلباتك والبدء في التنفيذ.',
       nextCardCta: 'ابدأ مشروعك',
       nextCollabBadge: '// التعاون القادم',
       modal: {
@@ -592,49 +598,49 @@ export const translations = {
     process: {
       badge: '// منهجية العمل',
       title: 'كيف نعمل',
-      subtitle: 'منهجية واضحة ومدروسة من 5 خطوات تحول أفكارك إلى منتجات رقمية متكاملة وقوية.',
+      subtitle: 'مسار عمل واضح من 5 خطوات لتخطيط وتصميم وبناء وتسليم مشروعك.',
       steps: [
         {
           step: '01',
           icon: 'Search',
           title: 'الاستكشاف والتخطيط',
-          description: 'نفهم أهدافك وجمهورك المستهدف ومتطلباتك بدقة عبر جلسات استراتيجية وتحليل شامل للسوق.',
+          description: 'ندرس أهدافك وجمهورك المستهدف ومتطلبات مشروعك لتحديد نطاق العمل.',
         },
         {
           step: '02',
           icon: 'Palette',
           title: 'التصميم وتجربة المستخدم',
-          description: 'مخططات هيكلية وتصميم عصري لواجهات وتجربة المستخدم (UI/UX) عالي الدقة للاعتماد قبل البرمجة.',
+          description: 'مخططات هيكلية وتصاميم واجهات (UI/UX) متجاوبة تُعرض عليك للمراجعة والاعتماد.',
         },
         {
           step: '03',
           icon: 'Code2',
           title: 'التطوير البرمجي',
-          description: 'برمجة نظيفة وسريعة وقابلة للتوسع وفق أحدث المعايير البرمجية والأمان العالي.',
+          description: 'تطوير واجهات وبرمجة خلفية بكود منظم وهيكلية برمجية واضحة ومعايير أمان قياسية.',
         },
         {
           step: '04',
           icon: 'ShieldCheck',
-          title: 'الفحص وضمان الجودة',
-          description: 'اختبارات مكثفة على كافة الشاشات والمتصفحات للتحقق من السرعة والاستجابة وتوافق تجربة الاستخدام.',
+          title: 'الفحص والاختبار',
+          description: 'فحص الجودة على مختلف المتصفحات والشاشات للتأكد من التجاوب وعمل جميع الوظائف.',
         },
         {
           step: '05',
           icon: 'Rocket',
           title: 'الإطلاق والدعم المستمر',
-          description: 'نشر التطبيق أو الموقع، التدريب، ومتابعة الصيانة الدورية لضمان نجاح الإطلاق والنمو المستمر.',
+          description: 'نشر الموقع أو التطبيق، وتسليم المشروع، والدعم بعد الإطلاق وفق ما يُتفق عليه لمشروعك.',
         },
       ],
     },
     techStack: {
       badge: '// تقنياتنا',
       title: 'التقنيات التي نستخدمها',
-      subtitle: 'نعتمد على أقوى التقنيات العالمية المختارة بعناية لتحقيق أعلى مستويات السرعة والأمان وقابلية التوسع.',
+      subtitle: 'تقنيات ويب حديثة مختارة للاستقرار والأمان وسهولة الصيانة.',
     },
     testimonialsSection: {
       badge: '// ثقة العملاء',
       title: 'ماذا يقول عملاؤنا',
-      subtitle: 'نفتخر بثقة المؤسسين وقادة الأعمال الذين اختاروا كافيرون لتنفيذ مشاريعهم الرقمية.',
+      subtitle: 'آراء وانطباعات من عملاء تعاونا معهم في مشاريعهم.',
       prevLabel: 'الرأي السابق',
       nextLabel: 'الرأي التالي',
       ratingAria: '5 من 5 نجوم',
@@ -643,7 +649,7 @@ export const translations = {
     faq: {
       badge: '// الأسئلة الشائعة',
       title: 'الأسئلة الأكثر شيوعاً',
-      subtitle: 'إجابات واضحة وشفافة حول طريقة عملنا، التكاليف، والتسليم وضمان الجودة.',
+      subtitle: 'إجابات عن الأسئلة الشائعة حول خدماتنا وطريقة عملنا والأسعار.',
       items: [
         {
           question: 'كم يستغرق بناء موقع أو تطبيق ويب؟',
@@ -663,7 +669,7 @@ export const translations = {
         {
           question: 'هل تقدمون الصيانة والدعم الفني بعد الإطلاق؟',
           answer:
-            'نعم بالتأكيد. كل مشروع يشمل فترة ضمان مجانية لمدة 30 يوماً بعد الإطلاق لحل أي ملاحظات. كما نوفر باقات دعم شهري وتطوير مستمر تشمل مراقبة الخوادم والتحديثات الأمنية وإضافة التحسينات.',
+            'نعم. الدعم بعد الإطلاق يُتفق عليه لكل مشروع ويُوضَّح في عرض السعر. كما نوفر باقات صيانة شهرية للتحديثات والمراقبة والتحسينات المستمرة.',
         },
         {
           question: 'هل يمكنني طلب تعديلات أثناء مرحلة التطوير؟',
@@ -678,10 +684,10 @@ export const translations = {
       ],
     },
     ctaBanner: {
-      badge: '// جاهز للانطلاق؟',
+      badge: '// ابدأ مشروعك',
       headline: 'هل لديك فكرة مشروع؟ دعنا نبنيها معاً.',
       subtitle:
-        'شاركنا رؤيتك وأهدافك، وسنحول فكرتك إلى منتج رقمي متميز يجذب العملاء ويحقق نمواً ملموساً لأعمالك.',
+        'أخبرنا عن أهداف مشروعك والجدول الزمني، وسنساعدك في تخطيط وبناء الحل المناسب.',
       buttonText: 'ابدأ مشروعك',
     },
     contactSection: {
@@ -693,7 +699,7 @@ export const translations = {
       breadcrumbContact: 'تواصل معنا',
       projectSimilarTemplate: 'أنا مهتم بمشروع مشابه لـ',
       title: 'دعنا نبني شيئاً استثنائياً معاً',
-      subtitle: 'هل أنت جاهز لتطوير حضورك الرقمي؟ أرسل لنا تفاصيل مشروعك وسنرد عليك بعرض مفصل وخطة عمل خلال 24 ساعة.',
+      subtitle: 'أرسل لنا تفاصيل مشروعك وسنتواصل معك.',
       cards: {
         emailTitle: 'راسلنا مباشرة',
         emailSub: 'رد سريع لجميع الاستفسارات',
@@ -744,8 +750,8 @@ export const translations = {
         unexpectedError: 'حدث خطأ غير متوقع. يرجى المحاولة مرة أخرى.',
       },
       success: {
-        title: 'شكراً لك! سنتواصل معك خلال 24 ساعة',
-        text: 'تم استلام تفاصيل مشروعك وحفظها بنجاح في نظامنا. سيقوم مهندسونا بمراجعة المتطلبات والتواصل معك مباشرة عبر البريد أو الهاتف.',
+        title: 'شكراً لك! تم استلام طلبك',
+        text: 'تم استلام تفاصيل مشروعك بنجاح. سيقوم فريقنا بمراجعة المتطلبات والتواصل معك قريباً.',
         anotherBtn: 'إرسال طلب مشروع آخر',
       },
     },
@@ -893,7 +899,7 @@ export const translations = {
       tooltip: 'تواصل عبر واتساب',
     },
     footer: {
-      description: 'استوديو رقمي حديث يبني مواقع الجيل الجديد، المتاجر الإلكترونية، والمنصات السحابية القابلة للتوسع للشركات الطموحة.',
+      description: 'كافيرون وكالة رقمية تصمم وتبني المواقع والمتاجر الإلكترونية وصفحات الهبوط وتطبيقات الويب ولوحات التحكم، بالعربية والإنجليزية.',
       quickLinksTitle: 'روابط سريعة',
       contactTitle: 'تواصل معنا',
       email: '',

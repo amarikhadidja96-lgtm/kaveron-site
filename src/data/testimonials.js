@@ -20,9 +20,9 @@ export const testimonials = [
     role: 'Founder & CEO at Novafy',
     role_ar: 'المؤسس والرئيس التنفيذي، نوفافاي',
     quote:
-      'kaveron delivered our SaaS web application weeks ahead of schedule. The code architecture is rock-solid, animations are buttery smooth, and our conversion rate jumped by 42% within the first month.',
+      'Kaveron delivered our web application with clean code architecture and responsive design. The interface is intuitive and works smoothly across all devices.',
     quote_ar:
-      'قامت كافيرون بتسليم تطبيق الويب لمنصتنا قبل الموعد بأسابيع. بنية الكود قوية للغاية، والانتقالات فائقة السلاسة، وارتفع معدل التحويل لدينا بنسبة 42٪ خلال الشهر الأول.',
+      'طوّرت كافيرون تطبيق الويب الخاص بنا بهيكلية برمجية منظمة وتصميم متجاوب، والواجهة سلسة وتعمل بمرونة على مختلف الأجهزة.',
     rating: 5,
     avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=160&h=160&q=80',
     companyLogoText: 'NOVAFY',
@@ -34,9 +34,9 @@ export const testimonials = [
     role: 'Head of Product at Apex Flow',
     role_ar: 'مديرة المنتجات في أبيكس فلو',
     quote:
-      'Finding an agency that truly excels at both world-class UI design and robust engineering is rare. kaveron built our full-stack web application flawlessly. Our user satisfaction score is holding strong at 4.9.',
+      'Working with Kaveron was straightforward. They provided clean UI design and reliable development that matched our project requirements.',
     quote_ar:
-      'من النادر العثور على وكالة تجمع بين التصميم المبتكر والهندسة البرمجية القوية. طوّرت كافيرون تطبيق الويب المتكامل لمنصتنا باحترافية، وتقييم رضا المستخدمين 4.9.',
+      'التعامل مع كافيرون كان واضحاً ومباشراً؛ قدموا تصميماً حديثاً وتطويراً متكاملاً لبى كافة متطلباتنا.',
     rating: 5,
     avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=160&h=160&q=80',
     companyLogoText: 'APEX FLOW',
@@ -48,9 +48,9 @@ export const testimonials = [
     role: 'Co-Founder & CTO at Kredo Pay',
     role_ar: 'المؤسس الشريك والمدير التقني، كريدو باي',
     quote:
-      'The speed and polish kaveron brought to our fintech landing page and customer portal was exceptional. Their bilingual LTR/RTL support and performance optimization were best-in-class.',
+      'The bilingual English and Arabic support was implemented accurately. The landing page and client portal load fast and work well on mobile.',
     quote_ar:
-      'كانت السرعة والإتقان الذي قدمته كافيرون في صفحة الهبوط وبوابة العملاء استثنائية. دعمهم ثنائي اللغة وتجهيز تجربة المستخدم باللغتين العربية والإنجليزية كان الأفضل على الإطلاق.',
+      'تم تنفيذ دعم اللغتين العربية والإنجليزية بشكل احترافي. صفحة الهبوط وبوابة العملاء سريعة في التحميل ومتجاوبة تماماً على الهواتف.',
     rating: 5,
     avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=160&h=160&q=80',
     companyLogoText: 'KREDO PAY',

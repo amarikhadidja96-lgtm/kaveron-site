@@ -18,15 +18,15 @@ export const seoMetadata = {
   en: {
     home: {
       title: 'Kaveron // Modern Digital Agency',
-      description: 'We build websites, online stores, landing pages and web apps engineered to grow your business.',
+      description: 'We build websites, online stores, landing pages, and web apps and dashboards in English and Arabic.',
     },
     projects: {
       title: 'Featured Projects // Kaveron',
-      description: 'Explore our portfolio of high-performance websites, online stores, and custom web applications.',
+      description: 'Explore our portfolio of websites, online stores, and web applications.',
     },
     contact: {
       title: 'Contact Us // Kaveron Agency',
-      description: 'Get in touch with Kaveron to discuss your project or request a quote. We reply within 24 hours.',
+      description: 'Get in touch with Kaveron to discuss your project or request a quote.',
     },
     privacy: {
       title: 'Privacy Policy // Kaveron',
@@ -40,15 +40,15 @@ export const seoMetadata = {
   ar: {
     home: {
       title: 'كافيرون // وكالة رقمية حديثة',
-      description: 'نبني مواقع ومتاجر إلكترونية وصفحات هبوط وتطبيقات ويب سريعة لتنمية أعمالك.',
+      description: 'نبني مواقع ومتاجر إلكترونية وصفحات هبوط وتطبيقات ويب ولوحات تحكم بالعربية والإنجليزية.',
     },
     projects: {
       title: 'أعمالنا ومشاريعنا // كافيرون',
-      description: 'استعرض سابقة أعمالنا في بناء مواقع ومتاجر إلكترونية وتطبيقات ويب سريعة وحديثة.',
+      description: 'استعرض سابقة أعمالنا في بناء مواقع ومتاجر إلكترونية وتطبيقات ويب.',
     },
     contact: {
       title: 'تواصل معنا // وكالة كافيرون',
-      description: 'تواصل مع فريق كافيرون لمناقشة مشروعك وطلب عرض سعر مخصص. نرد عليك خلال 24 ساعة.',
+      description: 'تواصل مع فريق كافيرون لمناقشة مشروعك وطلب عرض سعر مخصص.',
     },
     privacy: {
       title: 'سياسة الخصوصية // كافيرون',
@@ -183,8 +183,8 @@ export const updatePageSEO = (route, lang = 'en') => {
           },
           description:
             currentLang === 'ar'
-              ? 'وكالة رقمية حديثة تبني مواقع ومتاجر إلكترونية وصفحات هبوط وتطبيقات ويب سريعة.'
-              : 'Modern digital agency crafting websites, online stores, landing pages, and scalable web apps.',
+              ? 'كافيرون وكالة رقمية تصمم وتبني المواقع والمتاجر الإلكترونية وصفحات الهبوط وتطبيقات الويب ولوحات التحكم، بالعربية والإنجليزية.'
+              : 'Kaveron is a digital agency that designs and builds websites, online stores, landing pages, and web apps and dashboards, in English and Arabic.',
           ...(contactConfig.email && !isPlaceholder(contactConfig.email) ? { email: contactConfig.email } : {}),
           ...(Object.values(contactConfig.socials || {}).filter((url) => url && !isPlaceholder(url)).length > 0
             ? {
@@ -219,8 +219,8 @@ export const updatePageSEO = (route, lang = 'en') => {
           provider: { '@id': `${siteUrl}/#organization` },
           description:
             currentLang === 'ar'
-              ? 'صفحات هبوط عالية التحويل مصممة خصيصاً للحملات الإعلانية وإطلاق المنتجات.'
-              : 'High-converting landing pages designed specifically for paid ads and product launches.',
+              ? 'صفحات هبوط مصممة للحملات الإعلانية وإطلاق المنتجات والخدمات.'
+              : 'Landing pages designed for marketing campaigns and product launches.',
         },
         {
           '@type': 'Service',
@@ -228,8 +228,8 @@ export const updatePageSEO = (route, lang = 'en') => {
           provider: { '@id': `${siteUrl}/#organization` },
           description:
             currentLang === 'ar'
-              ? 'لوحات تحكم ومنصات ويب مخصصة مبنية للتوسع والأداء السريع.'
-              : 'Custom dashboards, SaaS platforms, and enterprise web applications engineered for scalability.',
+              ? 'تطبيقات ويب ولوحات تحكم وأدوات أعمال مخصصة لسير عملك.'
+              : 'Custom dashboards, web applications, and internal tools built for your business workflow.',
         },
       ],
     };
