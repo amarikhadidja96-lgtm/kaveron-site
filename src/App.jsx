@@ -71,6 +71,7 @@ export function App() {
 
   const [activePlan, setActivePlan] = useState(() => getQueryParam('plan'));
   const [activeProject, setActiveProject] = useState(() => getQueryParam('project'));
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   // Listen to browser navigation changes
   useEffect(() => {
@@ -247,6 +248,7 @@ export function App() {
         onToggleLang={toggleLanguage}
         currentRoute={currentRoute}
         onNavigate={navigateTo}
+        onMenuToggle={setMobileMenuOpen}
       />
 
       {/* Main Content Area */}
@@ -306,9 +308,9 @@ export function App() {
       <Footer t={currentTranslations} onNavigate={navigateTo} />
 
       {/* Floating Action Elements */}
-      <FloatingWhatsApp t={currentTranslations} currentLang={lang} />
+      <FloatingWhatsApp t={currentTranslations} currentLang={lang} hidden={mobileMenuOpen} />
       <Suspense fallback={null}>
-        <ChatWidget t={currentTranslations} currentLang={lang} />
+        <ChatWidget t={currentTranslations} currentLang={lang} hidden={mobileMenuOpen} />
       </Suspense>
     </div>
   );

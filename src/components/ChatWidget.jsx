@@ -22,7 +22,7 @@ import {
 } from '../data/chatSessions';
 import { supabase, isSupabaseConfigured } from '../lib/supabase';
 
-export const ChatWidget = ({ t, currentLang }) => {
+export const ChatWidget = ({ t, currentLang, hidden = false }) => {
   const isRtl = currentLang === 'ar';
   const chatT = t.chatbot;
 
@@ -287,7 +287,7 @@ export const ChatWidget = ({ t, currentLang }) => {
   return (
     <>
       {/* 1. Floating Welcome Bubble (Shows after 5 seconds) */}
-      {showWelcomeBubble && !isOpen && (
+      {showWelcomeBubble && !isOpen && !hidden && (
         <div
           role="status"
           className="fixed bottom-24 end-4 sm:end-6 z-40 animate-fade-in select-none"
@@ -321,7 +321,7 @@ export const ChatWidget = ({ t, currentLang }) => {
       )}
 
       {/* 2. Floating Action Button: bottom-right in LTR, bottom-left in RTL */}
-      {!isOpen && (
+      {!isOpen && !hidden && (
         <aside
           aria-label={chatT.widgetAria || 'AI Chat Widget'}
           className="fixed bottom-6 end-4 sm:end-6 z-40 select-none"

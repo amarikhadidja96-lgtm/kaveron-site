@@ -2,12 +2,12 @@ import React from 'react';
 import { MessageSquare } from 'lucide-react';
 import { contactConfig, isPlaceholder, getWhatsAppLink } from '../config/contact.config';
 
-export const FloatingWhatsApp = ({ t, currentLang }) => {
+export const FloatingWhatsApp = ({ t, currentLang, hidden = false }) => {
   const isRtl = currentLang === 'ar';
   const whatsappT = t?.whatsapp;
 
   const waLink = getWhatsAppLink(isRtl ? 'ar' : 'en');
-  if (!waLink || isPlaceholder(contactConfig.whatsapp)) {
+  if (!waLink || isPlaceholder(contactConfig.whatsapp) || hidden) {
     return null;
   }
 
